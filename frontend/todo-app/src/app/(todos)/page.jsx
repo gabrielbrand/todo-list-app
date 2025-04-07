@@ -19,7 +19,7 @@ export default function Home() {
 
   const tasksList = async () => {
     try {
-      const response = await axios.get('http://localhost:8000/tasks/');
+      const response = await axios.get('https://singular-api-gabriel.5eh2fn.easypanel.host/tasks/');
       setTasks(response.data.filter(task => !task.is_completed));
     } catch (error) {
       console.error('Erro ao carregar tarefas:', error);
@@ -41,7 +41,7 @@ const handleCompleteTask = async (taskId) => {
 
 const handleDeleteTask = async (taskId) => {
   try {
-    await axios.delete(`http://localhost:8000/tasks/${taskId}/`);
+    await axios.delete(`https://singular-api-gabriel.5eh2fn.easypanel.host/tasks/${taskId}/`);
     setTasks(tasks.filter(task => task.id !== taskId));
   } catch (error) {
     console.error('Erro ao deletar tarefa:', error);
@@ -51,7 +51,7 @@ const handleDeleteTask = async (taskId) => {
 
   const addTaskButton = async (newTask) => {
     try {
-      const response = await axios.post('http://localhost:8000/tasks/', newTask);
+      const response = await axios.post('https://singular-api-gabriel.5eh2fn.easypanel.host/tasks/', newTask);
       setTasks([...tasks, response.data]);
     } catch (error) {
       console.error('Erro ao adicionar tarefa:', error);

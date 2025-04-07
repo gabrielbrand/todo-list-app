@@ -19,7 +19,7 @@ export default function EditTaskPage() {
   useEffect(() => {
     if (!task_id) return
     
-    axios.get(`http://localhost:8000/tasks/${task_id}`)
+    axios.get(`https://singular-api-gabriel.5eh2fn.easypanel.host/tasks/${task_id}`)
       .then(({ data }) => setFormData({
         title_text: data.title_text || '',
         detail_text: data.detail_text || ''
@@ -27,7 +27,7 @@ export default function EditTaskPage() {
   }, [task_id])
 
   const handleUpdate = async () => {
-    await axios.put(`http://localhost:8000/tasks/${task_id}`, formData)
+    await axios.put(`https://singular-api-gabriel.5eh2fn.easypanel.host/tasks/${task_id}`, formData)
     router.push('/')
   }
 

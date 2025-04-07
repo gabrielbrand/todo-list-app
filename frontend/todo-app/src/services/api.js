@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:8000/tasks";
+const API_URL = "https://singular-api-gabriel.5eh2fn.easypanel.host/tasks";
 
 export const getTasks = async (completedOnly = false) => {
   try {

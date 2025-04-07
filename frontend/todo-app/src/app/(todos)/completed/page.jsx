@@ -11,7 +11,7 @@ export default function CompletedPage() {
   useEffect(() => {
     const fetchCompletedTasks = async () => {
       try {
-        const response = await axios.get('http://localhost:8000/tasks/');
+        const response = await axios.get('https://singular-api-gabriel.5eh2fn.easypanel.host/tasks/');
         setCompletedTasks(response.data.filter(task => task.is_completed === true));
       } catch (error) {
         console.error('Erro ao carregar tarefas completas:', error);
